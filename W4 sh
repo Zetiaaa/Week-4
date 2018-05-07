@@ -1,0 +1,40 @@
+
+
+
+#! /bin/bash
+
+
+#CSCI 2461-70
+
+# Bryce Brown
+
+
+
+#Use fdisk to look at your disks
+
+
+
+fdisk -l
+
+
+
+#Check disks
+
+fsck /dev/sdc1
+
+
+
+#Create a thing, mount and unmount it
+
+touch Yanach.img
+
+dd if=/dev/zero of=Yanach.img bs=512 count=64
+
+mkfs -t ext4 ~/Yanach.img
+
+
+
+mount -t ext4 ~/Yanach.img /dev/sdd1
+
+
+
